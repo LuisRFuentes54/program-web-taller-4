@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
+const users = require("../../db.json");
+
 app.set('port', process.env.PORT);
 
 
@@ -43,6 +45,20 @@ app.get("/boats", (req, res) => {
                 spaces: 2
             }
         ]
+    })
+})
+
+app.post("/login", (req, res) => {
+    for (const user of users) {
+        if (req.body.username === user.name) {
+            res.status(200).json({
+                key: user.key
+            });
+            return
+        }
+    }
+    res.status(500).json({
+        error: "Usuario no encontrado"
     })
 })
 
