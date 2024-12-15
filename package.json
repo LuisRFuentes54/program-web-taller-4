@@ -1,0 +1,23 @@
+{
+  "name": "program-web-taller-4",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index",
+    "start:dev": "node --watch --env-file=.env src/index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "js",
+    "websockets",
+    "api"
+  ],
+  "author": "luisrf0540@gmail.com",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "ws": "^8.18.0"
+  }
+}
