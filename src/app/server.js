@@ -13,5 +13,37 @@ app.use(cors({
     "credentials": true
 }));
 
+app.get("/", (req, res) => {
+    res.status(200).json({
+        "message": "Bienvenido. Este es el servidor para el taller 4 de program web"
+    })
+})
+
+app.get("/boats", (req, res) => {
+    res.status(200).json({
+        boats: [
+            {
+                name: "Portaaviones",
+                spaces: 5
+            },
+            {
+                name: "Acorazado",
+                spaces: 4
+            },
+            {
+                name: "Crucero",
+                spaces: 3
+            },
+            {
+                name: "Submarino",
+                spaces: 3
+            },
+            {
+                name: "Destructor",
+                spaces: 2
+            }
+        ]
+    })
+})
 
 module.exports = app;
